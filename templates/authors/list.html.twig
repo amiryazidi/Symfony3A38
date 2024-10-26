@@ -1,0 +1,37 @@
+
+{% if authors is empty %}
+
+<h2> aucun authors </h2>
+
+{% else %}
+
+<p>  le nombre des authors est : {{authors | length}} </p>
+
+<h1> liste des authors </h1>
+<table border='1'> 
+    <tr>
+        <td>id</td>
+        <td>Name</td>
+        <td>email</td>
+        <td>nb Books</td>
+        <td>picture</td>
+        <td>Actions </td>
+    </tr>
+{% set som = 0 %}
+<tr  {% for auth in authors %}>
+
+{% set som = som+ auth.nb_books%}
+
+  <td>  {{ auth.id}}  </td>
+  <td>   {{ auth.username | upper}} </td>
+  <td>  {{ auth.email}} </td>
+  <td>  {{ auth.nb_books}}  </td>
+ <td> <img src="{{ asset (auth.picture)}}" alt="image" style="width:50px; heigth:50px;" >    </td>
+    <td> <a href="{{path('show',{'id':auth.id})}}"> details </td>
+</tr  {% endfor%}>
+
+</table> 
+
+{% endif%}
+
+{{ som }}

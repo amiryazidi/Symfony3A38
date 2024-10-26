@@ -1,0 +1,18 @@
+
+
+{{dump(user)}}
+
+{# Bonjouur #}
+
+{% for u in user %}
+
+{{u.name}}
+{{u.email}}
+{{u.age}} 
+<a href="{{path('d',{'name':u.name})}}" > detail </a>
+<img src="{{asset('images/test.jfif')}}" alt="image" style="width:50px; heigth:50px;"> 
+{% if (u.age) > 25 %}
+<input type="submit" value="save">
+{% endif %}
+<br>
+{% endfor %}

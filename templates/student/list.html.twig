@@ -1,0 +1,22 @@
+
+<table border="1"> 
+
+    <tr> 
+        <th>Id</th>
+        <th>Name</th>
+        <th>Age</th>
+    </tr>
+
+
+    <tr {% for st in students%}>
+
+
+      <td>  {{st.id}} </td>
+    <td>  {{st.name}}  </td>
+      <td>  {{st.age}}  </td>
+        
+
+    </tr {% endfor %}>
+
+
+
